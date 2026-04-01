@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>НАВС м.Харків — Національна академія внутрішніх справ</title>
-    <link rel="icon" href="https://i.imgur.com/PRjTNqr.png" type="image/png">
+    <link rel="icon" href="https://i.postimg.cc/y8Pr9JHQ/National-Academy-of-Internal-Affairs-of-Ukraine.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -15,8 +15,6 @@
             --card-bg: #161622;
             --text: #ffffff;
             --light-text: #d0d0d0;
-            --success: #00e676;
-            --danger: #ff5252;
         }
 
         * { margin:0; padding:0; box-sizing:border-box; }
@@ -56,7 +54,11 @@
             font-weight: 700;
         }
 
-        .logo img { width: 64px; margin-right: 16px; }
+        .logo img { 
+            width: 68px; 
+            margin-right: 16px; 
+            border-radius: 8px;
+        }
 
         .nav-menu {
             display: flex;
@@ -179,7 +181,6 @@
             min-width: 360px;
             justify-content: center;
             transition: all 0.4s ease;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
         }
 
         .btn-exam {
@@ -187,19 +188,14 @@
             color: white;
         }
 
-        .btn-exam:hover { 
-            transform: scale(1.07); 
-            box-shadow: 0 20px 50px rgba(0,121,255,0.5);
-        }
+        .btn-exam:hover { transform: scale(1.07); }
 
         .btn-result {
             background: linear-gradient(135deg, #ffcb00, #ff9f00);
             color: #111;
         }
 
-        .btn-result:hover { 
-            transform: scale(1.07); 
-        }
+        .btn-result:hover { transform: scale(1.07); }
 
         /* Leadership */
         .leadership-grid {
@@ -253,9 +249,7 @@
             transition: all 0.4s ease;
         }
 
-        .stat-card:hover {
-            transform: translateY(-10px);
-        }
+        .stat-card:hover { transform: translateY(-10px); }
 
         .stat-card h3 {
             font-size: 3.8rem;
@@ -305,11 +299,17 @@
             max-height: 420px;
         }
 
-        /* Gallery */
+        /* Gallery - Нові фото */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
+        }
+
+        .gallery-item {
+            border-radius: 26px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
         }
 
         .gallery-item img {
@@ -374,7 +374,7 @@
         <div class="container">
             <nav>
                 <div class="logo">
-                    <img src="https://i.imgur.com/PRjTNqr.png" alt="НАВС">
+                    <img src="https://i.postimg.cc/y8Pr9JHQ/National-Academy-of-Internal-Affairs-of-Ukraine.png" alt="НАВС Логотип">
                     <span>НАВС м.Харків</span>
                 </div>
                 <ul class="nav-menu">
@@ -424,13 +424,10 @@
                     <strong>Іспит на 3-тє звання</strong> — здається <strong>усно</strong> перед атестаційною комісією.
                 </p>
                 <div class="action-buttons">
-                    <!-- Оновлене посилання на іспит -->
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSeA9dKs98OnBYA21rhvHUbK9JoJJh5UUnTA-ROuDWRwxgTCdQ/viewform" 
                        target="_blank" class="action-btn btn-exam">
                         <i class="fas fa-play-circle"></i> Пройти іспит (1 → 2 звання)
                     </a>
-                    
-                    <!-- Оновлене посилання на перевірку результату -->
                     <a href="https://docs.google.com/spreadsheets/d/1gN1Sjxv7GDHObeLBYTkFerc7wOzWwd1zM78tdRhnLhQ/edit?gid=798027026#gid=798027026" 
                        target="_blank" class="action-btn btn-result">
                         <i class="fas fa-clipboard-check"></i> Перевірити результат іспиту
@@ -448,37 +445,37 @@
             <h2 class="section-title">Керівництво НАВС м.Харків</h2>
             <div class="leadership-grid">
                 <div class="leader-card" data-rank="ГЕНЕРАЛ">
-                    <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/270.webp" style="width:100%; border-radius:20px; margin-bottom:25px;" alt="">
+                    <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/212.webp" style="width:100%; border-radius:20px; margin-bottom:25px;" alt="">
                     <h3>Богдан Батурінець</h3>
-                    <p>Генерал-лейтенант • Начальник академії</p>
+                    <p>Генерал</p>
                 </div>
 
                 <div class="leader-card" data-rank="ПОЛКОВНИК">
-                    <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/269.webp" style="width:100%; border-radius:20px; margin-bottom:25px;" alt="">
+                    <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/174.webp" style="width:100%; border-radius:20px; margin-bottom:25px;" alt="">
                     <h3>Дарина Бабусь</h3>
                     <p>Полковник • Керівник підрозділу НАВС</p>
                 </div>
 
                 <div class="leader-card" data-rank="МАЙОР">
-                    <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/229.webp" style="width:100%; border-radius:20px; margin-bottom:25px;" alt="">
+                    <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/183.webp" style="width:100%; border-radius:20px; margin-bottom:25px;" alt="">
                     <h3>Ернест Наливайко</h3>
                     <p>Майор • Заступник керівника</p>
                 </div>
 
                 <div class="leader-card" data-rank="ІНСТРУКТОР">
-                    <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/269.webp" style="width:100%; border-radius:20px; margin-bottom:25px;" alt="">
+                    <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/182.webp" style="width:100%; border-radius:20px; margin-bottom:25px;" alt="">
                     <h3>Дмитро Гашевський</h3>
                     <p>Інструктор</p>
                 </div>
 
                 <div class="leader-card" data-rank="ІНСТРУКТОР">
-                    <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/229.webp" style="width:100%; border-radius:20px; margin-bottom:25px;" alt="">
+                    <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/211.webp" style="width:100%; border-radius:20px; margin-bottom:25px;" alt="">
                     <h3>Вікторія Онучка</h3>
                     <p>Інструктор</p>
                 </div>
 
                 <div class="leader-card vacancy-card" data-rank="ІНСТРУКТОР">
-                    <img src="https://i.imgur.com/PRjTNqr.png" style="width:100%; border-radius:20px; margin-bottom:25px; filter: brightness(0.9);" alt="">
+                    <img src="https://i.postimg.cc/y8Pr9JHQ/National-Academy-of-Internal-Affairs-of-Ukraine.png" style="width:100%; border-radius:20px; margin-bottom:25px; filter: brightness(0.9);" alt="">
                     <h3 style="color: var(--accent);">Вакансія</h3>
                     <p style="font-size:1.25rem; margin:20px 0 12px;">Шукаємо саме тебе!</p>
                     <p>Приєднуйся до команди інструкторів НАВС м.Харків</p>
@@ -511,12 +508,12 @@
         <div class="container">
             <h2 class="section-title">Галерея академії</h2>
             <div class="gallery-grid">
-                <div class="gallery-item"><img src="https://i.imgur.com/G2SoaPY.png" alt=""></div>
-                <div class="gallery-item"><img src="https://i.imgur.com/LbsKT2r.jpeg" alt=""></div>
-                <div class="gallery-item"><img src="https://i.imgur.com/NgYoZ0B.png" alt=""></div>
-                <div class="gallery-item"><img src="https://i.imgur.com/CAtaHJy.png" alt=""></div>
-                <div class="gallery-item"><img src="https://i.imgur.com/4lhfLhD.png" alt=""></div>
-                <div class="gallery-item"><img src="https://i.imgur.com/AoLjINj.png" alt=""></div>
+                <div class="gallery-item"><img src="https://i.postimg.cc/T2NdjwTs/photo-2026-03-30-14-38-26.jpg" alt="НАВС Харків 1"></div>
+                <div class="gallery-item"><img src="https://i.postimg.cc/dtzJXxkx/photo-2026-04-01-23-03-30.jpg" alt="НАВС Харків 2"></div>
+                <div class="gallery-item"><img src="https://i.postimg.cc/R0m4CJT1/photo-2026-04-01-23-03-38.jpg" alt="НАВС Харків 3"></div>
+                <div class="gallery-item"><img src="https://i.postimg.cc/KzvbBXwS/photo-2026-04-01-23-03-49.jpg" alt="НАВС Харків 4"></div>
+                <div class="gallery-item"><img src="https://i.postimg.cc/wM1d4X6z/photo-2026-04-01-23-03-59.jpg" alt="НАВС Харків 5"></div>
+                <div class="gallery-item"><img src="https://i.postimg.cc/1RdSnjHZ/photo-2026-04-01-23-04-05.jpg" alt="НАВС Харків 6"></div>
             </div>
         </div>
     </section>
