@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>НАВС м.Харків — Національна академія внутрішніх справ</title>
+    <link rel="icon" href="https://i.imgur.com/PRjTNqr.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0079ff;
+            --accent: #ffcb00;
+            --dark-bg: #0A0A12;
+            --card-bg: #161622;
+            --text: #ffffff;
+            --light-text: #d0d0d0;
+            --success: #00e676;
+            --danger: #ff5252;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(180deg, #0A0A12 0%, #12121F 100%);
+            color: var(--text);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1320px; margin: 0 auto; padding: 0 30px; }
+
+        header {
+            position: fixed;
+            top: 0; width: 100%;
+            background: rgba(10,10,18,0.96);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 22px 0;
+            transition: all 0.4s ease;
+        }
+
+        header.scrolled { padding: 16px 0; }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.52rem;
+            font-weight: 700;
+        }
+
+        .logo img { width: 64px; margin-right: 16px; }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 36px;
+        }
+
+        .nav-menu a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-menu a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+
+        .nav-menu a:hover:after { width: 100%; }
+
+        /* Hero */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.88)), url('https://i.imgur.com/8I4wQ0P.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(0,121,255,0.18) 0%, transparent 75%);
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4.6rem;
+            line-height: 1.05;
+            margin-bottom: 20px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #ffffff, #a0d8ff, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero .subtitle {
+            font-size: 1.55rem;
+            margin-bottom: 50px;
+            color: var(--light-text);
+        }
+
+        .section { padding: 150px 0; }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 80px;
+            color: var(--primary);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -22px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 130px;
+            height: 6px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 6px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 28px;
+            padding: 50px;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.35);
+            transition: all 0.5s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 35px 90px rgba(0,121,255,0.25);
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin: 70px 0;
+        }
+
+        .action-btn {
+            padding: 24px 55px;
+            font-size: 1.22rem;
+            font-weight: 700;
+            border-radius: 60px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            min-width: 360px;
+            justify-content: center;
+            transition: all 0.4s ease;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .btn-exam {
+            background: linear-gradient(135deg, #0079ff, #00c4ff);
+            color: white;
+        }
+
+        .btn-exam:hover { 
+            transform: scale(1.07); 
+            box-shadow: 0 20px 50px rgba(0,121,255,0.5);
+        }
+
+        .btn-result {
+            background: linear-gradient(135deg, #ffcb00, #ff9f00);
+            color: #111;
+        }
+
+        .btn-result:hover { 
+            transform: scale(1.07); 
+        }
+
+        /* Leadership */
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 42px;
+        }
+
+        .leader-card {
+            position: relative;
+            text-align: center;
+            background: var(--card-bg);
+            border-radius: 28px;
+            padding: 45px 35px;
+            transition: all 0.5s ease;
+        }
+
+        .leader-card:hover { transform: translateY(-15px); }
+
+        .leader-card::before {
+            content: attr(data-rank);
+            position: absolute;
+            top: -22px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 10px 38px;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .vacancy-card {
+            border: 4px dashed var(--accent);
+            background: rgba(255,203,0,0.07);
+        }
+
+        /* Statistics */
+        .statistics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 50px 30px;
+            background: var(--card-bg);
+            border-radius: 28px;
+            transition: all 0.4s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-card h3 {
+            font-size: 3.8rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        /* FAQ */
+        .faq-container { max-width: 960px; margin: 0 auto; }
+
+        .faq-item {
+            margin-bottom: 26px;
+            border-radius: 24px;
+            overflow: hidden;
+            background: var(--card-bg);
+            box-shadow: 0 15px 45px rgba(0,0,0,0.3);
+        }
+
+        .faq-question {
+            padding: 28px 40px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.18rem;
+        }
+
+        .faq-question i {
+            color: var(--accent);
+            transition: transform 0.5s;
+        }
+
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+
+        .faq-answer {
+            padding: 0 40px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.65s ease;
+            background: #111118;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 32px 40px;
+            max-height: 420px;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .gallery-item:hover img { transform: scale(1.25); }
+
+        footer {
+            background: #0C0C18;
+            padding: 100px 0 70px;
+            text-align: center;
+        }
+
+        #scrollToTop {
+            position: fixed;
+            bottom: 45px;
+            right: 45px;
+            width: 68px;
+            height: 68px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s;
+        }
+
+        #scrollToTop.visible { opacity: 1; visibility: visible; }
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.94);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            padding: 60px 55px;
+            border-radius: 30px;
+            width: 92%;
+            max-width: 560px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="https://i.imgur.com/PRjTNqr.png" alt="НАВС">
+                    <span>НАВС м.Харків</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Головна</a></li>
+                    <li><a href="#about">Про нас</a></li>
+                    <li><a href="#exams">Іспити</a></li>
+                    <li><a href="#leadership">Керівництво</a></li>
+                    <li><a href="#statistics">Статистика</a></li>
+                    <li><a href="#gallery">Галерея</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Національна академія<br>внутрішніх справ України</h1>
+                <p class="subtitle">НАВС м.Харків — кузня професіоналів Національної поліції</p>
+                <p style="font-size:1.3rem; color:#bbb;">Честь • Професіоналізм • Патріотизм</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">Про НАВС м.Харків</h2>
+            <div class="card">
+                <p>Національна академія внутрішніх справ у місті Харків є одним з найпрестижніших вищих навчальних закладів системи Міністерства внутрішніх справ України. Ми здійснюємо комплексну професійну підготовку майбутніх офіцерів Національної поліції.</p>
+                
+                <p>Академія поєднує сучасні освітні технології, глибокі теоретичні знання та практичну підготовку. Наші курсанти отримують якісну освіту з кримінального права, оперативно-розшукової діяльності, тактичної та вогневої підготовки, психології, фізичної культури та багатьох інших дисциплін.</p>
+                
+                <p>Ми пишаємося високим рівнем викладацького складу, сучасною матеріально-технічною базою та тісною співпрацею з практичними підрозділами Національної поліції. Випускники НАВС м.Харків гідно служать у лавах НПУ, забезпечуючи правопорядок і безпеку громадян України.</p>
+                
+                <p>Обираючи навчання в нашій академії, ви стаєте частиною великої родини професіоналів, які щодня захищають закон і державу.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="exams" class="section">
+        <div class="container">
+            <h2 class="section-title">Іспити на присвоєння звань</h2>
+            <div class="card">
+                <p style="text-align:center; font-size:1.28rem; margin-bottom:45px;">
+                    <strong>Іспит на 2-ге звання</strong> — проводиться в тестовій формі.<br>
+                    <strong>Іспит на 3-тє звання</strong> — здається <strong>усно</strong> перед атестаційною комісією.
+                </p>
+                <div class="action-buttons">
+                    <!-- Оновлене посилання на іспит -->
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeA9dKs98OnBYA21rhvHUbK9JoJJh5UUnTA-ROuDWRwxgTCdQ/viewform" 
+                       target="_blank" class="action-btn btn-exam">
+                        <i class="fas fa-play-circle"></i> Пройти іспит (1 → 2 звання)
+                    </a>
+                    
+                    <!-- Оновлене посилання на перевірку результату -->
+                    <a href="https://docs.google.com/spreadsheets/d/1gN1Sjxv7GDHObeLBYTkFerc7wOzWwd1zM78tdRhnLhQ/edit?gid=798027026#gid=798027026" 
+                       target="_blank" class="action-btn btn-result">
+                        <i class="fas fa-clipboard-check"></i> Перевірити результат іспиту
+                    </a>
+                </div>
+                <p style="text-align:center; margin-top:45px; color:#bbb;">
+                    Усний іспит на 3-тє звання включає теоретичні питання, аналіз практичних ситуацій та демонстрацію професійних навичок.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="leadership" class="section">
+        <div class="container">
+            <h2 class="section-title">Керівництво НАВС м.Харків</h2>
+            <div class="leadership-grid">
+                <div class="leader-card" data-rank="ГЕНЕРАЛ">
+                    <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/270.webp" style="width:100%; border-radius:20px; margin-bottom:25px;" alt="">
+                    <h3>Богдан Батурінець</h3>
+                    <p>Генерал-лейтенант • Начальник академії</p>
+                </div>
+
+                <div class="leader-card" data-rank="ПОЛКОВНИК">
+                    <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/269.webp" style="width:100%; border-radius:20px; margin-bottom:25px;" alt="">
+                    <h3>Дарина Бабусь</h3>
+                    <p>Полковник • Керівник підрозділу НАВС</p>
+                </div>
+
+                <div class="leader-card" data-rank="МАЙОР">
+                    <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/229.webp" style="width:100%; border-radius:20px; margin-bottom:25px;" alt="">
+                    <h3>Ернест Наливайко</h3>
+                    <p>Майор • Заступник керівника</p>
+                </div>
+
+                <div class="leader-card" data-rank="ІНСТРУКТОР">
+                    <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/269.webp" style="width:100%; border-radius:20px; margin-bottom:25px;" alt="">
+                    <h3>Дмитро Гашевський</h3>
+                    <p>Інструктор</p>
+                </div>
+
+                <div class="leader-card" data-rank="ІНСТРУКТОР">
+                    <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/229.webp" style="width:100%; border-radius:20px; margin-bottom:25px;" alt="">
+                    <h3>Вікторія Онучка</h3>
+                    <p>Інструктор</p>
+                </div>
+
+                <div class="leader-card vacancy-card" data-rank="ІНСТРУКТОР">
+                    <img src="https://i.imgur.com/PRjTNqr.png" style="width:100%; border-radius:20px; margin-bottom:25px; filter: brightness(0.9);" alt="">
+                    <h3 style="color: var(--accent);">Вакансія</h3>
+                    <p style="font-size:1.25rem; margin:20px 0 12px;">Шукаємо саме тебе!</p>
+                    <p>Приєднуйся до команди інструкторів НАВС м.Харків</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="statistics" class="section">
+        <div class="container">
+            <h2 class="section-title">Статистика академії</h2>
+            <div class="statistics-grid">
+                <div class="card stat-card">
+                    <h3>20</h3>
+                    <p>Рядових курсантів навчається</p>
+                </div>
+                <div class="card stat-card">
+                    <h3>2</h3>
+                    <p>Інструкторів</p>
+                </div>
+                <div class="card stat-card">
+                    <h3>2</h3>
+                    <p>Старших керівників</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2 class="section-title">Галерея академії</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://i.imgur.com/G2SoaPY.png" alt=""></div>
+                <div class="gallery-item"><img src="https://i.imgur.com/LbsKT2r.jpeg" alt=""></div>
+                <div class="gallery-item"><img src="https://i.imgur.com/NgYoZ0B.png" alt=""></div>
+                <div class="gallery-item"><img src="https://i.imgur.com/CAtaHJy.png" alt=""></div>
+                <div class="gallery-item"><img src="https://i.imgur.com/4lhfLhD.png" alt=""></div>
+                <div class="gallery-item"><img src="https://i.imgur.com/AoLjINj.png" alt=""></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section">
+        <div class="container">
+            <h2 class="section-title">Часті питання (FAQ)</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Як часто проводяться іспити на 2-ге та 3-тє звання?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Іспити на 2-ге звання проводяться щомісяця. Іспит на 3-тє звання проводиться за графіком атестаційної комісії та здається усно.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Яка форма складання іспиту на 3-тє звання?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Іспит на 3-тє звання здається усно перед комісією. Він включає теоретичні питання, аналіз практичних ситуацій та демонстрацію професійних навичок.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Що потрібно для допуску до іспиту?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Успішне проходження навчальних модулів, відсутність дисциплінарних стягнень та позитивна рекомендація керівника.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Національна академія внутрішніх справ України м.Харків. Всі права захищені.</p>
+            <p style="margin-top:20px;">Слава Україні! Героям слава!</p>
+        </div>
+    </footer>
+
+    <div id="scrollToTop"><i class="fas fa-arrow-up"></i></div>
+
+    <div id="result-modal" class="modal">
+        <div class="modal-content">
+            <h2 style="color:var(--primary);">Перевірка результату іспиту</h2>
+            <input id="exam-id" type="text" placeholder="Введіть ID курсанта або номер заяви" style="width:100%; padding:22px; margin:35px 0; border-radius:18px; border:none;">
+            <button onclick="checkResult()" style="width:100%; padding:20px; background:var(--accent); color:#000; border:none; border-radius:60px; font-weight:700;">Перевірити</button>
+            <div id="result-output" style="margin-top:45px; min-height:160px;"></div>
+            <button onclick="closeModal()" style="margin-top:35px; background:transparent; border:2px solid #777; color:#bbb; padding:16px 50px; border-radius:60px;">Закрити</button>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            document.getElementById('scrollToTop').classList.toggle('visible', window.scrollY > 700);
+            document.querySelector('header').classList.toggle('scrolled', window.scrollY > 150);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        document.getElementById('scrollToTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => item.classList.toggle('active'));
+        });
+
+        function openResultModal() {
+            document.getElementById('result-modal').style.display = 'flex';
+            document.getElementById('result-output').innerHTML = '';
+        }
+
+        function closeModal() {
+            document.getElementById('result-modal').style.display = 'none';
+        }
+
+        function checkResult() {
+            const id = document.getElementById('exam-id').value.trim();
+            const output = document.getElementById('result-output');
+            if (!id) {
+                output.innerHTML = `<p style="color:var(--danger);">Введіть ID або номер заяви</p>`;
+                return;
+            }
+            if (Math.random() > 0.35) {
+                output.innerHTML = `<p style="color:var(--success);font-size:1.75rem;">✅ Успішно!</p><p>ID: <strong>${id}</strong></p><p>Оцінка: 95 з 100</p>`;
+            } else {
+                output.innerHTML = `<p style="color:var(--danger);font-size:1.65rem;">Не складено</p><p>ID: <strong>${id}</strong></p><p>Оцінка: 57 з 100</p>`;
+            }
+        }
+    </script>
+</body>
+</html>
