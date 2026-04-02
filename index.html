@@ -16,9 +16,7 @@
             --text: #ffffff;
             --light-text: #d0d0d0;
         }
-
         * { margin:0; padding:0; box-sizing:border-box; }
-
         body {
             font-family: 'Montserrat', sans-serif;
             background: linear-gradient(180deg, #0A0A12 0%, #12121F 100%);
@@ -26,9 +24,7 @@
             line-height: 1.8;
             overflow-x: hidden;
         }
-
         .container { max-width: 1320px; margin: 0 auto; padding: 0 30px; }
-
         header {
             position: fixed;
             top: 0; width: 100%;
@@ -38,41 +34,34 @@
             padding: 22px 0;
             transition: all 0.4s ease;
         }
-
         header.scrolled { padding: 16px 0; }
-
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
         .logo {
             display: flex;
             align-items: center;
             font-size: 1.52rem;
             font-weight: 700;
         }
-
-        .logo img { 
-            width: 68px; 
-            margin-right: 16px; 
+        .logo img {
+            width: 68px;
+            margin-right: 16px;
             border-radius: 8px;
         }
-
         .nav-menu {
             display: flex;
             list-style: none;
             gap: 36px;
         }
-
         .nav-menu a {
             color: var(--text);
             text-decoration: none;
             font-weight: 500;
             position: relative;
         }
-
         .nav-menu a:after {
             content: '';
             position: absolute;
@@ -83,10 +72,8 @@
             background: var(--accent);
             transition: width 0.3s;
         }
-
         .nav-menu a:hover:after { width: 100%; }
 
-        /* Hero */
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.88)), url('https://i.imgur.com/8I4wQ0P.png') center/cover no-repeat;
@@ -95,20 +82,17 @@
             text-align: center;
             position: relative;
         }
-
         .hero::before {
             content: '';
             position: absolute;
             inset: 0;
             background: radial-gradient(circle at center, rgba(0,121,255,0.18) 0%, transparent 75%);
         }
-
         .hero-content {
             max-width: 1000px;
             margin: 0 auto;
             z-index: 2;
         }
-
         .hero h1 {
             font-size: 4.6rem;
             line-height: 1.05;
@@ -118,15 +102,12 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
         .hero .subtitle {
             font-size: 1.55rem;
             margin-bottom: 50px;
             color: var(--light-text);
         }
-
         .section { padding: 150px 0; }
-
         .section-title {
             text-align: center;
             font-size: 3rem;
@@ -134,7 +115,6 @@
             color: var(--primary);
             position: relative;
         }
-
         .section-title::after {
             content: '';
             position: absolute;
@@ -146,7 +126,6 @@
             background: linear-gradient(to right, var(--primary), var(--accent));
             border-radius: 6px;
         }
-
         .card {
             background: var(--card-bg);
             border-radius: 28px;
@@ -154,13 +133,10 @@
             box-shadow: 0 25px 70px rgba(0,0,0,0.35);
             transition: all 0.5s ease;
         }
-
         .card:hover {
             transform: translateY(-20px);
             box-shadow: 0 35px 90px rgba(0,121,255,0.25);
         }
-
-        /* Action Buttons */
         .action-buttons {
             display: flex;
             justify-content: center;
@@ -168,7 +144,6 @@
             flex-wrap: wrap;
             margin: 70px 0;
         }
-
         .action-btn {
             padding: 24px 55px;
             font-size: 1.22rem;
@@ -182,28 +157,54 @@
             justify-content: center;
             transition: all 0.4s ease;
         }
-
         .btn-exam {
             background: linear-gradient(135deg, #0079ff, #00c4ff);
             color: white;
         }
-
         .btn-exam:hover { transform: scale(1.07); }
-
         .btn-result {
             background: linear-gradient(135deg, #ffcb00, #ff9f00);
             color: #111;
         }
-
         .btn-result:hover { transform: scale(1.07); }
 
-        /* Leadership */
+        /* Новий стиль для рапорту інструкторів */
+        .report-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin: 60px 0 30px;
+        }
+        .btn-report {
+            padding: 24px 55px;
+            font-size: 1.22rem;
+            font-weight: 700;
+            border-radius: 60px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            min-width: 360px;
+            justify-content: center;
+            transition: all 0.4s ease;
+        }
+        .btn-submit {
+            background: linear-gradient(135deg, #00c853, #64dd17);
+            color: white;
+        }
+        .btn-submit:hover { transform: scale(1.07); }
+        .btn-check {
+            background: linear-gradient(135deg, #ffcb00, #ff9f00);
+            color: #111;
+        }
+        .btn-check:hover { transform: scale(1.07); }
+
         .leadership-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 42px;
         }
-
         .leader-card {
             position: relative;
             text-align: center;
@@ -212,9 +213,7 @@
             padding: 45px 35px;
             transition: all 0.5s ease;
         }
-
         .leader-card:hover { transform: translateY(-15px); }
-
         .leader-card::before {
             content: attr(data-rank);
             position: absolute;
@@ -228,19 +227,62 @@
             font-size: 1rem;
             font-weight: 700;
         }
-
         .vacancy-card {
             border: 4px dashed var(--accent);
             background: rgba(255,203,0,0.07);
         }
 
-        /* Statistics */
+        /* Графік роботи */
+        .schedule-card {
+            background: var(--card-bg);
+            border-radius: 28px;
+            padding: 45px 35px;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.35);
+        }
+        .npu-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            font-size: 1.1rem;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        .npu-table th {
+            background: linear-gradient(135deg, #0079ff, #00a8ff);
+            color: white;
+            padding: 22px 15px;
+            font-weight: 700;
+            text-align: center;
+        }
+        .npu-table td {
+            padding: 20px 15px;
+            text-align: center;
+            border-bottom: 1px solid #333;
+            background: #1e1e2a;
+        }
+        .npu-table tr:last-child td {
+            border-bottom: none;
+        }
+        .npu-table td:first-child {
+            font-weight: 600;
+            background: rgba(0,121,255,0.12);
+            width: 120px;
+        }
+        .npu-table .time {
+            font-size: 1.2rem;
+            color: #a0d8ff;
+            font-weight: 500;
+        }
+        .npu-table .break {
+            font-size: 0.96rem;
+            color: #bbb;
+            margin-top: 8px;
+        }
         .statistics-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 35px;
         }
-
         .stat-card {
             text-align: center;
             padding: 50px 30px;
@@ -248,19 +290,14 @@
             border-radius: 28px;
             transition: all 0.4s ease;
         }
-
         .stat-card:hover { transform: translateY(-10px); }
-
         .stat-card h3 {
             font-size: 3.8rem;
             color: var(--primary);
             margin-bottom: 12px;
             font-weight: 700;
         }
-
-        /* FAQ */
         .faq-container { max-width: 960px; margin: 0 auto; }
-
         .faq-item {
             margin-bottom: 26px;
             border-radius: 24px;
@@ -268,7 +305,6 @@
             background: var(--card-bg);
             box-shadow: 0 15px 45px rgba(0,0,0,0.3);
         }
-
         .faq-question {
             padding: 28px 40px;
             cursor: pointer;
@@ -278,14 +314,11 @@
             font-weight: 600;
             font-size: 1.18rem;
         }
-
         .faq-question i {
             color: var(--accent);
             transition: transform 0.5s;
         }
-
         .faq-item.active .faq-question i { transform: rotate(180deg); }
-
         .faq-answer {
             padding: 0 40px;
             max-height: 0;
@@ -293,40 +326,32 @@
             transition: all 0.65s ease;
             background: #111118;
         }
-
         .faq-item.active .faq-answer {
             padding: 32px 40px;
             max-height: 420px;
         }
-
-        /* Gallery - Нові фото */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
         }
-
         .gallery-item {
             border-radius: 26px;
             overflow: hidden;
             box-shadow: 0 20px 50px rgba(0,0,0,0.4);
         }
-
         .gallery-item img {
             width: 100%;
             height: 280px;
             object-fit: cover;
             transition: transform 0.8s ease;
         }
-
         .gallery-item:hover img { transform: scale(1.25); }
-
         footer {
             background: #0C0C18;
             padding: 100px 0 70px;
             text-align: center;
         }
-
         #scrollToTop {
             position: fixed;
             bottom: 45px;
@@ -345,9 +370,7 @@
             visibility: hidden;
             transition: all 0.5s;
         }
-
         #scrollToTop.visible { opacity: 1; visibility: visible; }
-
         .modal {
             display: none;
             position: fixed;
@@ -357,7 +380,6 @@
             align-items: center;
             justify-content: center;
         }
-
         .modal-content {
             background: var(--card-bg);
             padding: 60px 55px;
@@ -369,7 +391,6 @@
     </style>
 </head>
 <body>
-
     <header id="header">
         <div class="container">
             <nav>
@@ -381,7 +402,9 @@
                     <li><a href="#home">Головна</a></li>
                     <li><a href="#about">Про нас</a></li>
                     <li><a href="#exams">Іспити</a></li>
+                    <li><a href="#report">Рапорт інструкторів</a></li>
                     <li><a href="#leadership">Керівництво</a></li>
+                    <li><a href="#schedule">Графік роботи</a></li>
                     <li><a href="#statistics">Статистика</a></li>
                     <li><a href="#gallery">Галерея</a></li>
                     <li><a href="#faq">FAQ</a></li>
@@ -405,11 +428,8 @@
             <h2 class="section-title">Про НАВС м.Харків</h2>
             <div class="card">
                 <p>Національна академія внутрішніх справ у місті Харків є одним з найпрестижніших вищих навчальних закладів системи Міністерства внутрішніх справ України. Ми здійснюємо комплексну професійну підготовку майбутніх офіцерів Національної поліції.</p>
-                
                 <p>Академія поєднує сучасні освітні технології, глибокі теоретичні знання та практичну підготовку. Наші курсанти отримують якісну освіту з кримінального права, оперативно-розшукової діяльності, тактичної та вогневої підготовки, психології, фізичної культури та багатьох інших дисциплін.</p>
-                
                 <p>Ми пишаємося високим рівнем викладацького складу, сучасною матеріально-технічною базою та тісною співпрацею з практичними підрозділами Національної поліції. Випускники НАВС м.Харків гідно служать у лавах НПУ, забезпечуючи правопорядок і безпеку громадян України.</p>
-                
                 <p>Обираючи навчання в нашій академії, ви стаєте частиною великої родини професіоналів, які щодня захищають закон і державу.</p>
             </div>
         </div>
@@ -424,17 +444,44 @@
                     <strong>Іспит на 3-тє звання</strong> — здається <strong>усно</strong> перед атестаційною комісією.
                 </p>
                 <div class="action-buttons">
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeA9dKs98OnBYA21rhvHUbK9JoJJh5UUnTA-ROuDWRwxgTCdQ/viewform" 
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeA9dKs98OnBYA21rhvHUbK9JoJJh5UUnTA-ROuDWRwxgTCdQ/viewform"
                        target="_blank" class="action-btn btn-exam">
                         <i class="fas fa-play-circle"></i> Пройти іспит (1 → 2 звання)
                     </a>
-                    <a href="https://docs.google.com/spreadsheets/d/1gN1Sjxv7GDHObeLBYTkFerc7wOzWwd1zM78tdRhnLhQ/edit?gid=798027026#gid=798027026" 
+                    <a href="https://docs.google.com/spreadsheets/d/1gN1Sjxv7GDHObeLBYTkFerc7wOzWwd1zM78tdRhnLhQ/edit?gid=798027026#gid=798027026"
                        target="_blank" class="action-btn btn-result">
                         <i class="fas fa-clipboard-check"></i> Перевірити результат іспиту
                     </a>
                 </div>
                 <p style="text-align:center; margin-top:45px; color:#bbb;">
                     Усний іспит на 3-тє звання включає теоретичні питання, аналіз практичних ситуацій та демонстрацію професійних навичок.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== РАПОРТ ДЛЯ РОБОТИ ІНСТРУКТОРІВ ========== -->
+    <section id="report" class="section">
+        <div class="container">
+            <h2 class="section-title">Рапорт для роботи інструкторів</h2>
+            <div class="card">
+                <p style="text-align:center; font-size:1.28rem; margin-bottom:50px;">
+                    Подання та перевірка виконаної роботи інструкторів НАВС м.Харків
+                </p>
+                
+                <div class="report-buttons">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf0wkRV9VARZSQHAhUlE28-9dVOXhmrwisd0sVj0wh5-_cPzw/viewform?usp=header" 
+                       target="_blank" class="btn-report btn-submit">
+                        <i class="fas fa-file-upload"></i> Подати рапорт (робота інструкторів)
+                    </a>
+                    <a href="https://docs.google.com/spreadsheets/d/1FdzL5jEsVw1FYtpLyKMUef-3qsLfSYRDCqmscq6EeP8/edit?usp=sharing" 
+                       target="_blank" class="btn-report btn-check">
+                        <i class="fas fa-clipboard-check"></i> Перевірити результат роботи
+                    </a>
+                </div>
+
+                <p style="text-align:center; color:#bbb; margin-top:40px;">
+                    Після подання рапорту результат з’явиться у таблиці. Перевірка доступна за посиланням вище.
                 </p>
             </div>
         </div>
@@ -449,37 +496,62 @@
                     <h3>Богдан Батурінець</h3>
                     <p>Генерал</p>
                 </div>
-
                 <div class="leader-card" data-rank="ПОЛКОВНИК">
                     <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/174.webp" style="width:100%; border-radius:20px; margin-bottom:25px;" alt="">
                     <h3>Дарина Бабусь</h3>
                     <p>Полковник • Керівник підрозділу НАВС</p>
                 </div>
-
                 <div class="leader-card" data-rank="МАЙОР">
                     <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/183.webp" style="width:100%; border-radius:20px; margin-bottom:25px;" alt="">
                     <h3>Ернест Наливайко</h3>
                     <p>Майор • Заступник керівника</p>
                 </div>
-
                 <div class="leader-card" data-rank="ІНСТРУКТОР">
                     <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/182.webp" style="width:100%; border-radius:20px; margin-bottom:25px;" alt="">
                     <h3>Дмитро Гашевський</h3>
                     <p>Інструктор</p>
                 </div>
-
                 <div class="leader-card" data-rank="ІНСТРУКТОР">
                     <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/211.webp" style="width:100%; border-radius:20px; margin-bottom:25px;" alt="">
                     <h3>Вікторія Онучка</h3>
                     <p>Інструктор</p>
                 </div>
-
                 <div class="leader-card vacancy-card" data-rank="ІНСТРУКТОР">
                     <img src="https://i.postimg.cc/y8Pr9JHQ/National-Academy-of-Internal-Affairs-of-Ukraine.png" style="width:100%; border-radius:20px; margin-bottom:25px; filter: brightness(0.9);" alt="">
                     <h3 style="color: var(--accent);">Вакансія</h3>
                     <p style="font-size:1.25rem; margin:20px 0 12px;">Шукаємо саме тебе!</p>
                     <p>Приєднуйся до команди інструкторів НАВС м.Харків</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ГРАФІК РОБОТИ ========== -->
+    <section id="schedule" class="section">
+        <div class="container">
+            <h2 class="section-title">Графік роботи НПУ</h2>
+            <div class="schedule-card">
+                <table class="npu-table">
+                    <thead>
+                        <tr>
+                            <th>День тижня</th>
+                            <th>Робочий час</th>
+                            <th>Перерва</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Понеділок</td><td class="time">10:00 – 21:00</td><td class="break">12:30–13:00 / 15:30–16:30</td></tr>
+                        <tr><td>Вівторок</td><td class="time">09:30 – 21:00</td><td class="break">12:30–13:00 / 15:30–16:30</td></tr>
+                        <tr><td>Середа</td><td class="time">10:00 – 21:00</td><td class="break">12:30–13:00 / 15:30–16:30</td></tr>
+                        <tr><td>Четвер</td><td class="time">09:30 – 21:00</td><td class="break">12:30–13:00 / 15:30–16:30</td></tr>
+                        <tr><td>П'ятниця</td><td class="time">10:00 – 21:00</td><td class="break">12:30–13:00 / 15:30–16:30</td></tr>
+                        <tr><td>Субота</td><td class="time">10:30 – 21:30</td><td class="break">12:30–13:00 / 15:30–16:30</td></tr>
+                        <tr><td>Неділя</td><td class="time">10:30 – 21:30</td><td class="break">12:30–13:00 / 15:30–16:30</td></tr>
+                    </tbody>
+                </table>
+                <p style="text-align: center; margin-top: 35px; color: #a0d8ff; font-size: 1.12rem;">
+                    Графік роботи підрозділу Національної поліції України в НАВС м.Харків
+                </p>
             </div>
         </div>
     </section>
@@ -531,7 +603,6 @@
                         <p>Іспити на 2-ге звання проводяться щомісяця. Іспит на 3-тє звання проводиться за графіком атестаційної комісії та здається усно.</p>
                     </div>
                 </div>
-
                 <div class="faq-item">
                     <div class="faq-question">
                         Яка форма складання іспиту на 3-тє звання?
@@ -541,7 +612,6 @@
                         <p>Іспит на 3-тє звання здається усно перед комісією. Він включає теоретичні питання, аналіз практичних ситуацій та демонстрацію професійних навичок.</p>
                     </div>
                 </div>
-
                 <div class="faq-item">
                     <div class="faq-question">
                         Що потрібно для допуску до іспиту?
@@ -579,42 +649,32 @@
             document.getElementById('scrollToTop').classList.toggle('visible', window.scrollY > 700);
             document.querySelector('header').classList.toggle('scrolled', window.scrollY > 150);
         });
-
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
         });
-
         document.getElementById('scrollToTop').addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-
         document.querySelectorAll('.faq-item').forEach(item => {
             item.addEventListener('click', () => item.classList.toggle('active'));
         });
-
-        function openResultModal() {
-            document.getElementById('result-modal').style.display = 'flex';
-            document.getElementById('result-output').innerHTML = '';
-        }
-
         function closeModal() {
             document.getElementById('result-modal').style.display = 'none';
         }
-
         function checkResult() {
             const id = document.getElementById('exam-id').value.trim();
             const output = document.getElementById('result-output');
             if (!id) {
-                output.innerHTML = `<p style="color:var(--danger);">Введіть ID або номер заяви</p>`;
+                output.innerHTML = `<p style="color:#ff4444;">Введіть ID або номер заяви</p>`;
                 return;
             }
             if (Math.random() > 0.35) {
-                output.innerHTML = `<p style="color:var(--success);font-size:1.75rem;">✅ Успішно!</p><p>ID: <strong>${id}</strong></p><p>Оцінка: 95 з 100</p>`;
+                output.innerHTML = `<p style="color:#00ff88;font-size:1.75rem;">✅ Успішно!</p><p>ID: <strong>${id}</strong></p><p>Оцінка: 95 з 100</p>`;
             } else {
-                output.innerHTML = `<p style="color:var(--danger);font-size:1.65rem;">Не складено</p><p>ID: <strong>${id}</strong></p><p>Оцінка: 57 з 100</p>`;
+                output.innerHTML = `<p style="color:#ff4444;font-size:1.65rem;">Не складено</p><p>ID: <strong>${id}</strong></p><p>Оцінка: 57 з 100</p>`;
             }
         }
     </script>
